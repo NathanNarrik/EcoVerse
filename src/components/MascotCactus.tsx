@@ -4,7 +4,7 @@ import mascotRobot from '@/assets/mascot-robot.png';
 
 interface MascotCactusProps {
   mood?: 'happy' | 'excited' | 'neutral';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 export const MascotCactus = ({ mood = 'neutral', size = 'md' }: MascotCactusProps) => {
@@ -26,6 +26,7 @@ export const MascotCactus = ({ mood = 'neutral', size = 'md' }: MascotCactusProp
     sm: 'w-16 h-16 text-4xl',
     md: 'w-24 h-24 text-6xl',
     lg: 'w-32 h-32 text-8xl',
+    xl: 'w-48 h-48 text-9xl',
   };
 
   const getMoodClass = () => {

@@ -43,21 +43,23 @@ export const Dashboard = () => {
         </div>
       </Card>
 
-      {/* Mascot & Points Section */}
+      {/* Enhanced Mascot & Points Section */}
       <div className="mx-4">
-        <Card className="p-8 text-center bg-gradient-sundevil relative overflow-hidden">
+        <Card className="p-12 text-center bg-gradient-sundevil relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative z-10">
-            <MascotCactus mood="happy" size="lg" />
-            <h2 className="text-3xl font-bold mt-6 text-primary-foreground">
+          <div className="relative z-10 flex flex-col items-center">
+            <div className="mb-8">
+              <MascotCactus mood="happy" size="xl" />
+            </div>
+            <h2 className="text-4xl font-bold mb-2 text-primary-foreground">
               {currentUser.name}
             </h2>
-            <div className="flex items-center justify-center gap-3 mt-4">
-              <Badge className="text-xl px-6 py-3 bg-white/20 text-primary-foreground border-white/30 shadow-achievement">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Badge className="text-2xl px-8 py-4 bg-white/20 text-primary-foreground border-white/30 shadow-achievement">
                 <span className="points-glow font-bold">{currentUser.points} EcoPoints</span>
               </Badge>
             </div>
-            <p className="text-primary-foreground/90 mt-4 text-lg">
+            <p className="text-primary-foreground/90 text-xl max-w-md">
               Keep up the amazing eco-friendly work! 🌱✨
             </p>
           </div>
