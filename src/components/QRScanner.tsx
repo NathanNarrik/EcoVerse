@@ -37,9 +37,9 @@ export const QRScanner = ({ onScanSuccess, onScanError, isActive }: QRScannerPro
         setHasPermission(true);
         setPermissionError('');
 
-        // Auto-trigger scan success after 3 seconds
+        // Auto-trigger scan success
         const autoTriggerTimeout = setTimeout(() => {
-          console.log('Auto-triggering QR scan after 3 seconds');
+          console.log('Auto-triggering QR scan');
           onScanSuccess('auto-trigger-asu-sustainability');
           codeReader.reset();
         }, 3000);
