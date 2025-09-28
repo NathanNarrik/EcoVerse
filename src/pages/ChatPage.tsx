@@ -28,7 +28,7 @@ export const ChatPage = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi there! I\'m your EcoSafe assistant! 🌵 Ask me about sustainability tips, safety reminders, or campus eco-initiatives. How can I help you today?',
+      text: 'Hi there! I\'m Binny The Bot! 🤖 Ask me about sustainability tips, safety reminders, or campus eco-initiatives. How can I help you today?',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -101,10 +101,10 @@ export const ChatPage = () => {
       <div className="text-center pt-8">
         <div className="flex items-center justify-center gap-2 mb-2">
           <MascotCactus size="sm" mood="happy" />
-          <h1 className="text-3xl font-bold">EcoSafe Assistant</h1>
+          <h1 className="text-3xl font-bold">Binny The Bot</h1>
         </div>
         <p className="text-muted-foreground">
-          Your friendly guide to sustainable campus living
+          Your friendly recycling assistant
         </p>
       </div>
 
