@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ASU EcoSafe Design System - Sun Devil Pride & Sustainability */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 60 10% 98%;
+    --foreground: 0 0% 7%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    /* Primary - ASU Maroon */
+    --primary: 0 75% 30%;
+    --primary-foreground: 45 100% 95%;
+
+    /* Secondary - ASU Gold */
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 0 0% 7%;
+
+    /* Muted tones */
+    --muted: 45 20% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Bright gold highlights */
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 7%;
+
+    /* Success - Bright achievement green */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Safety alert orange */
+    --warning: 25 95% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 120 15% 85%;
+    --input: 120 15% 95%;
+    --ring: 142 69% 58%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ASU-themed gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 75% 30%), hsl(0 65% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 55%), hsl(45 100% 50%));
+    --gradient-earth: linear-gradient(180deg, hsl(45 30% 95%), hsl(45 20% 90%));
+    --gradient-sundevil: linear-gradient(135deg, hsl(0 75% 30%), hsl(45 100% 55%));
+
+    /* ASU-themed shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 7% / 0.1);
+    --shadow-achievement: 0 10px 25px -5px hsl(45 100% 55% / 0.3);
+    --shadow-alert: 0 8px 20px -5px hsl(0 75% 50% / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-soft: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 120 10% 95%;
+
+    --card: 120 15% 10%;
+    --card-foreground: 120 10% 95%;
+
+    --popover: 120 15% 10%;
+    --popover-foreground: 120 10% 95%;
+
+    --primary: 0 75% 30%;
+    --primary-foreground: 45 100% 95%;
+
+    --secondary: 45 50% 15%;
+    --secondary-foreground: 45 100% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 7%;
+
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 25 95% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 10% 20%;
+    --input: 120 10% 15%;
+    --ring: 142 69% 58%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Achievement animations */
+  .achievement-bounce {
+    @apply animate-[bounce_0.6s_var(--bounce-soft)];
+  }
+
+  .points-glow {
+    @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+    filter: drop-shadow(0 0 10px hsl(var(--success) / 0.5));
+  }
+
+  /* Mascot animations */
+  .mascot-wiggle {
+    @apply animate-[wiggle_1s_ease-in-out_infinite];
+  }
+
+  .mascot-cheer {
+    @apply animate-[cheer_0.8s_var(--bounce-soft)];
+  }
+
+  /* Navigation styles */
+  .nav-item {
+    @apply relative transition-all duration-300 hover:scale-105;
+  }
+
+  .nav-item-active {
+    @apply bg-primary text-primary-foreground shadow-md;
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  @keyframes cheer {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+    75% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .bg-gradient-sundevil {
+    background: var(--gradient-sundevil);
+  }
+}
